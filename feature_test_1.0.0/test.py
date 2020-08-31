@@ -28,6 +28,7 @@ a=[[1],[1],[1]]
 b=[[2],[2],[2]]
 
 c=[[1, 2], [1, 2], [1, 2]]
+print()
 def combine_two_2d_list(a,b):
     for i in range(0, len(a)):
         print(a[i])
@@ -42,15 +43,15 @@ print(c)
 
 
 print("############")
-def ppt():
-    a=1
-    b=2
-    c=3
-    return a,b,c
-mat1,mat2=ppt()[0],ppt()[1]
-print(mat1)
-print(mat2)
-print(ppt()[2])
+cc=[1,2,3,4,5]
+import numpy as np
+print(cc[-1])
 
-
-
+from itertools import chain
+original=[[1,2,3],[4,5,6],[7,8,9]]
+#original_1=sum(original,[])
+#print(original_1)
+instead=[0,0,0,0]
+original[1:2]=[instead]
+print(original)
+print(original.index(original[1][1]))

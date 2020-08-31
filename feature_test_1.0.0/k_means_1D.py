@@ -86,7 +86,7 @@ def k_means_1d_def(k,loop_times):
     print("&&&&&&&, final result:", finial_result)
 
     return finial_result,loop_times_list,max_min_matlab_number
-k_means_1d_def(3,15)
+#k_means_1d_def(3,15)
 #matlab_top_line_number,matlab_bot_line_number=k_means_1d_def(test_dataset,3,15)[2],k_means_1d_def(test_dataset,3,15)[3]
 
 
