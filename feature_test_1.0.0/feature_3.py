@@ -7,6 +7,8 @@ from math_test import *
 from pylab import *
 from pixelbetweenpoints import pixel_between_two_points
 
+display=cv.imread("G:\\2020summer\\Project\\Cell_classfication_1.0.0\\temp.jpg")
+cv.imshow("location_original", display)
 
 img=cv.imread("G:\\2020summer\\Project\\Cell_classfication_1.0.0\\temp_1.jpg")
 img_result=img.copy()
@@ -37,10 +39,10 @@ print("read from local : ", dict_)
 distance_from_single_point_to_center_list=[]
 
 
-for m in range(10,11):#对某些点进行测试
+for m in range(28,29):#对某些点进行测试
     x_sample = dict_[m][0]
     y_sample = dict_[m][1]
-    angle_temp_list = angle_round(x_sample, y_sample, 60)  # 第三个参数为圆的半径
+    angle_temp_list = angle_round(x_sample, y_sample, 65)  # 第三个参数为圆的半径
 
     for i in range(1,73):
         x1=angle_temp_list[i-1][0]
@@ -80,8 +82,12 @@ for m in range(10,11):#对某些点进行测试
         #plt.plot(color_hist, color="black")
         #plt.show()
         cv.circle(img, (round(x_final), round(y_final)), 1, (0, 0, 255), -1)
-        #cv.circle(img, (round(sorted_color_deep_rank[1][0][1]), round(sorted_color_deep_rank[1][0][0])), 1, (0, 255, 255), -1)
-        #cv.circle(img, (round(sorted_color_deep_rank[2][0][1]), round(sorted_color_deep_rank[2][0][0])), 1, (0, 255, 255), -1)
+        cv.circle(img, (round(sorted_color_deep_rank[1][0][1]), round(sorted_color_deep_rank[1][0][0])), 1, (0, 255, 255), -1)
+        cv.circle(img, (round(sorted_color_deep_rank[2][0][1]), round(sorted_color_deep_rank[2][0][0])), 1, (0, 255, 255), -1)
+        cv.circle(img, (round(sorted_color_deep_rank[3][0][1]), round(sorted_color_deep_rank[3][0][0])), 1,
+                  (0, 255, 255), -1)
+        cv.circle(img, (round(sorted_color_deep_rank[4][0][1]), round(sorted_color_deep_rank[4][0][0])), 1,
+                  (0, 255, 255), -1)
         cv.circle(img, (round(x1), round(y1)), 1, (255, 0, 255), -1) #半径显示
 
         #distance test and upload
@@ -120,8 +126,10 @@ for m in range(10,11):#对某些点进行测试
     file.close()
     #list save >
     plt.plot(distance_from_single_point_to_center_list, color="black")
-    plt.plot([21.63]*len(a), color="red", linestyle='--')
-    plt.plot([37.48 ] * len(a), color="red", linestyle='--')
+    from k_means_1D import k_means_1d_def
+    temp_list_1=k_means_1d_def(3,30)[2]
+    plt.plot([temp_list_1[0]]*len(a), color="red", linestyle='--')
+    plt.plot([temp_list_1[1]] * len(a), color="red", linestyle='--')
     plt.plot(a, color="red")
     plt.show()
 

@@ -128,6 +128,7 @@ print("save dict successfully.")
 
 #-----
 cv.imshow('img_copy', img_masked)
+
 cv.imwrite("G:\\2020summer\\Project\\Cell_classfication_1.0.0\\temp.jpg",img_masked)
 cv.imwrite("G:\\2020summer\\Project\\Cell_classfication_1.0.0\\temp_1.jpg",img_nucleus_white_img)
 #==================================

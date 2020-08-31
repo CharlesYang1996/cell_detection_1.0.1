@@ -39,3 +39,18 @@ def combine_two_2d_list(a,b):
 print(combine_two_2d_list(c,a))
 c.remove(c[2])
 print(c)
+
+
+print("############")
+def ppt():
+    a=1
+    b=2
+    c=3
+    return a,b,c
+mat1,mat2=ppt()[0],ppt()[1]
+print(mat1)
+print(mat2)
+print(ppt()[2])
+
+
+
