@@ -38,6 +38,5 @@ def pixel_between_two_points(x1, x2, y1, y2):
 
 test=pixel_between_two_points(168, 132,
                          179, 150)
-print(test)
-print(test[2])
+
 

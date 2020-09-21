@@ -1,57 +1,68 @@
-key_value ={}
-key_value[1,2] = 56
-key_value[3,4] = 2
-key_value[5,6] = 12
-key_value[7,8] = 24
-key_value[8,9] = 18
-key_value[10,10] = 323
-
-print("按值(value)排序:")
-sorted_key_value=sorted(key_value.items(), key=lambda kv: (kv[1], kv[0]),reverse=True)
-print(sorted_key_value)
-print(sorted_key_value[0])
-print(sorted_key_value[0][0][0])
-print(sorted_key_value[0][0][1])
-
-# read from local
-f = open("G:\\2020summer\\Project\\Cell_classfication_1.0.0\\dict.txt", 'r')
-dict_ = eval(f.read())
-f.close()
-print("read from local : ", dict_)
-print(dict_[1][0],dict_[1][1])
-
-
-
-
-
-a=[[1],[1],[1]]
-b=[[2],[2],[2]]
-
-c=[[1, 2], [1, 2], [1, 2]]
-print()
-def combine_two_2d_list(a,b):
-    for i in range(0, len(a)):
-        print(a[i])
-
-        print(b[i])
-        a[i].append(b[i][0])
-
-    return a
-print(combine_two_2d_list(c,a))
-c.remove(c[2])
+a=[[1,2,3],[99,2],[1,2,3,4],[3,3,3,33.33,3,3],[1],[2],[9,9,9]]
+c=[]
+for i in range(0,len(a)):
+    for m in range(0,len(a[i])):
+        c.append(a[i][m])
 print(c)
 
 
-print("############")
-cc=[1,2,3,4,5]
-import numpy as np
-print(cc[-1])
+def find_min_length_list(dataset):
+    m=999
+    for i in dataset:
+        if len(i)<=m:
+            m=len(i)
+            position=dataset.index(i)
 
-from itertools import chain
-original=[[1,2,3],[4,5,6],[7,8,9]]
-#original_1=sum(original,[])
-#print(original_1)
-instead=[0,0,0,0]
-original[1:2]=[instead]
-print(original)
-print(original.index(original[1][1]))
+
+
+for i in range(0,100):
+    if i ==15:
+        print("out15")
+        break
+    elif i ==20:
+        print("out20")
+
+
+
+def find_longest_element_index(list):
+    word_len_list = [len(word) for word in list]
+    max_word_len = max(word_len_list)
+    for word in list:
+        if len(word) == max_word_len:
+            print("find_longest_element: ",word)
+            print("find_longest_element_index:",list.index(word))
+
+
+c=[1,2,3,4,5,6]
+c.remove(c[2])
+print(c)
+import matplotlib.pyplot as plt
+
+"""  
+    Demo of the histogram (hist) function with a few features.  
+
+    In addition to the basic histogram, this demo shows a few optional features:  
+
+        * Setting the number of data bins  
+        * The ``normed`` flag, which normalizes bin heights so that the integral of  
+          the histogram is 1. The resulting histogram is a probability density.  
+        * Setting the face color of the bars  
+        * Setting the opacity (alpha value).  
+
+    """
+import numpy as np
+
+"""  
+    Demo of the histogram (hist) function with a few features.  
+
+    In addition to the basic histogram, this demo shows a few optional features:  
+
+        * Setting the number of data bins  
+        * The ``normed`` flag, which normalizes bin heights so that the integral of  
+          the histogram is 1. The resulting histogram is a probability density.  
+        * Setting the face color of the bars  
+        * Setting the opacity (alpha value).  
+
+    """
+import numpy as np
+import matplotlib.mlab as mlab
